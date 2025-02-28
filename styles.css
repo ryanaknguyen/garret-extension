@@ -6,7 +6,7 @@
 
 button {
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 600;
 }
 
@@ -26,7 +26,8 @@ button:active {
   color: white;
   font-weight: 600;
   border-bottom: #92bab1 2px solid;
-  min-width: 400px;
+  min-width: 350px;
+  font-size: 16px;
 }
 
 #garret-content {
@@ -35,13 +36,13 @@ button:active {
 
 #content-title {
   text-align: center;
-  margin: 10px 0 20px;
+  margin: 5px 0 10px;
 }
 
 #task-title {
   text-align: center;
   text-decoration: underline;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #tasks-list {
@@ -52,7 +53,7 @@ button:active {
 }
 
 .task {
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
 }
 
@@ -75,7 +76,7 @@ button:active {
 }
 
 #add-text-input {
-  min-width: 400px;
+  min-width: 300px;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -99,7 +100,8 @@ button:active {
   color: white;
   border: 2px solid #92bab1;
   flex: 1;
-  margin: 10px;
+  margin: 0 3px;
+  padding: 7px 5px;
 }
 
 .check {

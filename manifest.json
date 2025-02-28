@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Garret",
+  "description": "Boost productivity and wellbeing with Garret, an extension dedicated to mindfulness and growth.",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "images/happy-blob.png"
+  },
+  "icons": {
+    "16": "images/happy-blob-16.png",
+    "32": "images/happy-blob-32.png",
+    "48": "images/happy-blob-48.png",
+    "128": "images/happy-blob-128.png"
+  }
+}
