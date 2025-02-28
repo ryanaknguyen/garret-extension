@@ -1,6 +1,8 @@
-let mySavedTasks = ["Create schematic of Chrome Extension", "Fill out job application", "Finish coding assignment"]
+let mySavedTasks = []
 const addButtonInput = document.getElementById("add-task-button")
-const cancelButtonInput = document.getElementById("cancel-button")
+const addTextInput = document.getElementById("add-text-input")
+const saveTaskButtonInput = document.getElementById("save-task-button")
+const saveTabButtonInput = document.getElementById("save-tab-button")
 const addTools = document.getElementById("add-tools")
 const tasksList = document.getElementById("tasks-list")
 
@@ -12,20 +14,39 @@ renderTasks(mySavedTasks)
 addButtonInput.addEventListener("click", function() {
   const taskButton = document.getElementById("add-task-button")
   
-  addTools.style.display = addTools.style.display === "none" ? "block" : "none";
-
-  if (addTools.style.display == "block") {
-    taskButton.innerHTML = `CANCEL`
-  } else {
-    taskButton.innerHTML = `ADD +`
-  }
+  addTools.style.display = addTools.style.display === "none" ? "block" : "none"
+  taskButton.innerHTML = addTools.style.display === "block" ? `CANCEL` : `ADD +`
 
   renderTasks(mySavedTasks)
 })
 
+saveTaskButtonInput.addEventListener("click", function() {
+  const taskDescription = addTextInput.value
+  if (taskDescription.length == 0) {
+    alert("The task description cannot be empty. Please try again.")
+    return;
+  }
+
+  mySavedTasks.push(taskDescription)
+  addTextInput.value = ""
+
+  renderTasks(mySavedTasks)
+})
+
+saveTabButtonInput.addEventListener("click", function() {
+  console.log("save tab button clicked")
+})
+
 // Renders the list of tasks to the screen
 function renderTasks(savedTasks) {
+  if (savedTasks.length == 0) {
+    tasksList.innerHTML = `<p>There are no tasks to complete today!</p>`
+    tasksList.style.textAlign = "center"
+    return
+  }
+
   let tasks = ""
+  tasksList.style.textAlign = "left"
   for (const task of savedTasks) {
     tasks += `
       <div class='task'>
