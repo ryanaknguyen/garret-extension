@@ -15,6 +15,10 @@ button:hover {
   opacity: 80%;
 }
 
+button:active {
+  opacity: 60%;
+}
+
 #date-bar {
   text-align: center;
   background-color: #aac9c3;
@@ -37,6 +41,7 @@ button:hover {
 #task-title {
   text-align: center;
   text-decoration: underline;
+  font-size: 18px;
 }
 
 #garret-content ul {
@@ -61,6 +66,25 @@ button:hover {
   border: 2px solid #92bab1;
 }
 
+#add-tools {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#add-text-input {
+  min-width: 400px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.add-options-button {
+  padding: 5px 10px;
+  background-color: white;
+  border: 2px solid black;
+}
+
 #productivity-options {
   display: flex;
   justify-content: space-around;
@@ -71,6 +95,8 @@ button:hover {
   background-color: #aac9c3;
   color: white;
   border: 2px solid #92bab1;
+  flex: 1;
+  margin: 10px;
 }
 
 .check {
