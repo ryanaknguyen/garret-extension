@@ -10,11 +10,18 @@ const today = new Date()
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
+const localTasks = JSON.parse(localStorage.getItem("myTasks"))
+
 addTools.style.display = "none"
 
 renderDate(today)
 renderIntro(today)
 renderTasks(mySavedTasks)
+
+if (localTasks) {
+  mySavedTasks = localTasks
+  renderTasks(mySavedTasks)
+}
 
 // Displays add task functionality when add button is pressed
 addButtonInput.addEventListener("click", function() {
@@ -26,6 +33,7 @@ addButtonInput.addEventListener("click", function() {
   renderTasks(mySavedTasks)
 })
 
+// Saves the task that the user wants to add to the list
 saveTaskButtonInput.addEventListener("click", function() {
   const taskDescription = addTextInput.value
   if (taskDescription.length == 0) {
@@ -34,15 +42,18 @@ saveTaskButtonInput.addEventListener("click", function() {
   }
 
   mySavedTasks.push(taskDescription)
+  localStorage.setItem("myTasks", JSON.stringify(mySavedTasks))
   addTextInput.value = ""
 
   renderTasks(mySavedTasks)
 })
 
+// Saves the task with a link to the associated current tab to the list
 saveTabButtonInput.addEventListener("click", function() {
   console.log("hello")
 })
 
+// Renders the current date at the top of the extension
 function renderDate(today) {
   const dateBar = document.getElementById("date-bar")
   const dayOfTheWeek = today.getDay()
@@ -55,7 +66,7 @@ function renderDate(today) {
   dateBar.innerHTML = `${dayOfTheWeekWord}, ${monthWord} ${day}`
 }
 
-// Renders the introduction text on the top
+// Renders the introduction text on the top, greeting the user
 function renderIntro(today) {
   const intro = document.getElementById("content-title")
   const hours = today.getHours()
