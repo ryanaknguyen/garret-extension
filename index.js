@@ -5,10 +5,14 @@ const saveTaskButtonInput = document.getElementById("save-task-button")
 const saveTabButtonInput = document.getElementById("save-tab-button")
 const addTools = document.getElementById("add-tools")
 const tasksList = document.getElementById("tasks-list")
+
 const today = new Date()
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
 addTools.style.display = "none"
 
+renderDate(today)
 renderIntro(today)
 renderTasks(mySavedTasks)
 
@@ -38,6 +42,18 @@ saveTaskButtonInput.addEventListener("click", function() {
 saveTabButtonInput.addEventListener("click", function() {
   console.log("hello")
 })
+
+function renderDate(today) {
+  const dateBar = document.getElementById("date-bar")
+  const dayOfTheWeek = today.getDay()
+  const month = today.getMonth()
+  const day = today.getDate()
+
+  let dayOfTheWeekWord = daysOfTheWeek[dayOfTheWeek]
+  let monthWord = months[month]
+
+  dateBar.innerHTML = `${dayOfTheWeekWord}, ${monthWord} ${day}`
+}
 
 // Renders the introduction text on the top
 function renderIntro(today) {
