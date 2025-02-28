@@ -5,26 +5,31 @@
     <meta charset="UTF-8">
     <title>Garret</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div id="date-bar">Thursday, February 27</div>
 
     <div id="garret-content">
-      <h1>Good Afternoon!</h1>
+      <h1 id="content-title">Good Afternoon!</h1>
 
-      <h2>Today's Tasks:</h2>
+      <h2 id="task-title">Today's Tasks:</h2>
       <ul>
-        <li>Create schematic of Chrome Extension</li>
-        <li>Fill out job application</li>
-        <li>Finish coding assignment</li>
+        <div class="task"><input type="checkbox" class="check"><label for="Create schematic of Chrome Extension"><li>Create schematic of Chrome Extension</li></label></div>
+        <div class="task"><input type="checkbox" class="check"><label for="Fill out job application"><li>Fill out job application</li></label></div>
+        <div class="task"><input type="checkbox" class="check"><label for="Finish coding assignment"><li>Finish coding assignment</li></label></div>
       </ul>
-      <button>ADD +</button>
+      <div id="add-button">
+        <button id="add-task-button">ADD +</button>
+      </div>
 
       <div id="productivity-options">
-        <button>WORK TIMER</button>
-        <button>WELLNESS</button>
-        <button>REFLECT</button>
+        <button class="dark-button">WORK TIMER</button>
+        <button class="dark-button">WELLNESS</button>
+        <button class="dark-button">REFLECT</button>
       </div>
     </div>
   </body>

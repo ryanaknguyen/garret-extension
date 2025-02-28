@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+#date-bar {
+  text-align: center;
+  background-color: #aac9c3;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  border-bottom: #92bab1 2px solid;
+  min-width: 400px;
+}
+
+#garret-content {
+  padding: 10px;
+}
+
+#content-title {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#task-title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#garret-content ul {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.task {
+  display: flex;
+}
+
+#add-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#add-task-button {
+  padding: 5px 10px;
+  color: #aac9c3;
+  background-color: white;
+  border: 2px solid #92bab1;
+}
+
+#productivity-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.dark-button {
+  background-color: #aac9c3;
+  color: white;
+  border: 2px solid #92bab1;
+}
+
+.check {
+  margin-right: 5px;
+}
