@@ -1,9 +1,12 @@
-let mySavedTasks = []
+let mySavedTasks = ["Create schematic of Chrome Extension", "Fill out job application", "Finish coding assignment"]
 const addButtonInput = document.getElementById("add-task-button")
 const cancelButtonInput = document.getElementById("cancel-button")
 const addTools = document.getElementById("add-tools")
+const tasksList = document.getElementById("tasks-list")
 
 addTools.style.display = "none"
+
+renderTasks(mySavedTasks)
 
 // Displays add task functionality when add button is pressed
 addButtonInput.addEventListener("click", function() {
@@ -19,3 +22,18 @@ addButtonInput.addEventListener("click", function() {
 
   renderTasks(mySavedTasks)
 })
+
+// Renders the list of tasks to the screen
+function renderTasks(savedTasks) {
+  let tasks = ""
+  for (const task of savedTasks) {
+    tasks += `
+      <div class='task'>
+        <input type='checkbox' class='check' id='${task}'>
+        <label for='${task}'>${task}</label>
+      </div>
+    `
+  }
+
+  tasksList.innerHTML = tasks
+}
