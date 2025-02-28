@@ -5,9 +5,11 @@ const saveTaskButtonInput = document.getElementById("save-task-button")
 const saveTabButtonInput = document.getElementById("save-tab-button")
 const addTools = document.getElementById("add-tools")
 const tasksList = document.getElementById("tasks-list")
+const today = new Date()
 
 addTools.style.display = "none"
 
+renderIntro(today)
 renderTasks(mySavedTasks)
 
 // Displays add task functionality when add button is pressed
@@ -34,8 +36,24 @@ saveTaskButtonInput.addEventListener("click", function() {
 })
 
 saveTabButtonInput.addEventListener("click", function() {
-  console.log("save tab button clicked")
+  console.log("hello")
 })
+
+// Renders the introduction text on the top
+function renderIntro(today) {
+  const intro = document.getElementById("content-title")
+  const hours = today.getHours()
+
+  if (hours >= 4 && hours <= 11) {  // morning
+    intro.innerHTML = `Good Morning!`
+  } else if (hours >= 12 && hours <= 17) {
+    intro.innerHTML = `Good Afternoon!`
+  } else if (hours >= 18 && hours <= 21) {
+    intro.innerHTML = `Good Evening!`
+  } else {
+    intro.innerHTML = `Hello!`
+  }
+}
 
 // Renders the list of tasks to the screen
 function renderTasks(savedTasks) {
