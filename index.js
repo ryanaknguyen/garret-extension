@@ -1,5 +1,7 @@
 let mySavedTasks = []
+const doneButtonInput = document.getElementById("done-button")
 const addButtonInput = document.getElementById("add-task-button")
+const clearButtonInput = document.getElementById("clear-button")
 const addTextInput = document.getElementById("add-text-input")
 const saveTaskButtonInput = document.getElementById("save-task-button")
 const saveTabButtonInput = document.getElementById("save-tab-button")
@@ -30,6 +32,13 @@ addButtonInput.addEventListener("click", function() {
   addTools.style.display = addTools.style.display === "none" ? "block" : "none"
   taskButton.innerHTML = addTools.style.display === "block" ? `CANCEL` : `ADD +`
 
+  renderTasks(mySavedTasks)
+})
+
+// Clears the entire list of tasks
+clearButtonInput.addEventListener("click", function() {
+  mySavedTasks = []
+  localStorage.setItem("myTasks", JSON.stringify(mySavedTasks))
   renderTasks(mySavedTasks)
 })
 
