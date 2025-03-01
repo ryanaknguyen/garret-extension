@@ -12,5 +12,8 @@
     "32": "images/happy-blob-32.png",
     "48": "images/happy-blob-48.png",
     "128": "images/happy-blob-128.png"
-  }
+  },
+  "permissions": [
+    "tabs"
+  ]
 }

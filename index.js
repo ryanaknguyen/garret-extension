@@ -38,10 +38,10 @@ saveTaskButtonInput.addEventListener("click", function() {
   const taskDescription = addTextInput.value
   if (taskDescription.length == 0) {
     alert("The task description cannot be empty. Please try again.")
-    return;
+    return
   }
 
-  mySavedTasks.push(taskDescription)
+  mySavedTasks.push([taskDescription, "none"])
   localStorage.setItem("myTasks", JSON.stringify(mySavedTasks))
   addTextInput.value = ""
 
@@ -50,7 +50,23 @@ saveTaskButtonInput.addEventListener("click", function() {
 
 // Saves the task with a link to the associated current tab to the list
 saveTabButtonInput.addEventListener("click", function() {
-  console.log("hello")
+  const taskDescription = addTextInput.value
+  if (taskDescription.length == 0) {
+    alert("The task description cannot be empty. Please try again.")
+    return
+  }
+
+  let queryOptions = {active: true, currentWindow: true}
+  chrome.tabs.query(queryOptions, (tab) => {
+    if (chrome.runtime.lastError) console.error(chrome.runtime.lastError)
+    
+    const currentURL = tab[0].url
+    mySavedTasks.push([taskDescription, currentURL])
+    localStorage.setItem("myTasks", JSON.stringify(mySavedTasks))
+    addTextInput.value = ""
+
+    renderTasks(mySavedTasks)
+  })
 })
 
 // Renders the current date at the top of the extension
@@ -93,12 +109,21 @@ function renderTasks(savedTasks) {
   let tasks = ""
   tasksList.style.textAlign = "left"
   for (const task of savedTasks) {
-    tasks += `
-      <div class='task'>
-        <input type='checkbox' class='check' id='${task}'>
-        <label for='${task}'>${task}</label>
-      </div>
-    `
+    if (task[1] == "none") {
+      tasks += `
+        <div class='task'>
+          <input type='checkbox' class='check' id='${task[0]}'>
+          <label for='${task[0]}'>${task[0]}</label>
+        </div>
+      `
+    } else {
+      tasks += `
+        <div class='task'>
+          <input type='checkbox' class='check' id='${task[1]}'>
+          <label for='${task[1]}'>${task[0]} <a target='_blank' href=${task[1]}>[link]</a></label>
+        </div>
+      `
+    }
   }
 
   tasksList.innerHTML = tasks

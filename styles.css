@@ -28,20 +28,30 @@ button:active {
   border-bottom: #92bab1 2px solid;
   min-width: 350px;
   font-size: 16px;
+  text-shadow: 1px 1px 2px #92bab1
 }
 
 #garret-content {
   padding: 10px;
+  background-color: #c6dbdc;
 }
 
 #content-title {
   text-align: center;
-  margin: 5px 0 10px;
+  margin: 0 0 10px;
+  color: white;
+  text-shadow: 1px 1px 2px #92bab1;
+}
+
+#to-do {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px #92bab1;
 }
 
 #task-title {
   text-align: center;
-  text-decoration: underline;
   font-size: 16px;
 }
 
@@ -60,33 +70,34 @@ button:active {
 #add-button {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  gap: 3px;
 }
 
-#add-task-button {
+.task-button {
   padding: 5px 10px;
   color: #aac9c3;
   background-color: white;
-  border: 2px solid #92bab1;
+  border: 2px solid #aac9c3;
 }
 
 #add-tools {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #add-text-input {
   min-width: 300px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid #92bab1;
 }
 
 .add-options-button {
   padding: 5px 10px;
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid #92bab1;
+  color: #aac9c3;
 }
 
 #productivity-options {
@@ -105,5 +116,5 @@ button:active {
 }
 
 .check {
-  margin-right: 5px;
+  margin-right: 6px;
 }
