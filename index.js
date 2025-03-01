@@ -25,6 +25,27 @@ if (localTasks) {
   renderTasks(mySavedTasks)
 }
 
+// Removes the tasks that have been checked off
+doneButtonInput.addEventListener("click", function() {
+  let checkedBoxes = document.getElementsByClassName("check")
+  let checkedCount = 0
+
+  for (let i = checkedBoxes.length - 1; i >= 0; i--) {
+    if (checkedBoxes[i].checked) {
+      mySavedTasks.splice(i, 1)
+      checkedCount++
+    }
+  }
+
+  if (checkedCount == 0) {
+    alert("Please check finished applications before clicking DONE.")
+    return
+  }
+
+  localStorage.setItem("myTasks", JSON.stringify(mySavedTasks))
+  renderTasks(mySavedTasks)
+})
+
 // Displays add task functionality when add button is pressed
 addButtonInput.addEventListener("click", function() {
   const taskButton = document.getElementById("add-task-button")
