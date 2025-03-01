@@ -17,13 +17,18 @@
       <h1 id="content-title">Hello!</h1>
 
       <div id="to-do">
-        <h2 id="task-title">Today's Tasks</h2>
-        <div id="tasks-list"></div>
-        <div id="add-button">
-          <button id="done-button" class="task-button">DONE</button>
-          <button id="add-task-button" class="task-button">ADD +</button>
-          <button id="clear-button" class="task-button">CLEAR</button>
+        <div id="to-do-title-bar">
+          <h2 id="task-title">Today's Tasks</h2>
+          <div id="add-button">
+            <div id="task-options">
+              <button id="add-task-button" class="task-button important-task">ADD</button>
+              <button id="done-button" class="task-button important-task">DONE</button>
+              <button id="clear-button" class="task-button">CLEAR</button>
+            </div>
+            <button id="expand-options-button" class="task-button">+</button>
+          </div>
         </div>
+        <div id="tasks-list"></div>
         <div id="add-tools">
           <hr>
           <input type="text" id="add-text-input" placeholder="Add task description..." autocomplete="off">

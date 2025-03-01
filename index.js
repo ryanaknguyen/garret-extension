@@ -1,4 +1,5 @@
 let mySavedTasks = []
+const expandButtonInput = document.getElementById("expand-options-button")
 const doneButtonInput = document.getElementById("done-button")
 const addButtonInput = document.getElementById("add-task-button")
 const clearButtonInput = document.getElementById("clear-button")
@@ -7,6 +8,8 @@ const saveTaskButtonInput = document.getElementById("save-task-button")
 const saveTabButtonInput = document.getElementById("save-tab-button")
 const addTools = document.getElementById("add-tools")
 const tasksList = document.getElementById("tasks-list")
+const taskOptions = document.getElementById("task-options")
+const addTaskButton = document.getElementById("add-task-button")
 
 const today = new Date()
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -15,6 +18,8 @@ const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "
 const localTasks = JSON.parse(localStorage.getItem("myTasks"))
 
 addTools.style.display = "none"
+taskOptions.style.display = "none"
+
 
 renderDate(today)
 renderIntro(today)
@@ -24,6 +29,17 @@ if (localTasks) {
   mySavedTasks = localTasks
   renderTasks(mySavedTasks)
 }
+
+// Expands the options that the user can do with the list
+expandButtonInput.addEventListener("click", function() {
+  taskOptions.style.display = taskOptions.style.display === "none" ? "block" : "none"
+  expandButtonInput.innerHTML = taskOptions.style.display === "block" ? `-` : `+`
+
+  if (expandButtonInput.innerHTML === `+`) {
+    addTools.style.display = "none"
+    addTaskButton.innerHTML = `ADD`
+  }
+})
 
 // Removes the tasks that have been checked off
 doneButtonInput.addEventListener("click", function() {
@@ -48,10 +64,9 @@ doneButtonInput.addEventListener("click", function() {
 
 // Displays add task functionality when add button is pressed
 addButtonInput.addEventListener("click", function() {
-  const taskButton = document.getElementById("add-task-button")
   
   addTools.style.display = addTools.style.display === "none" ? "block" : "none"
-  taskButton.innerHTML = addTools.style.display === "block" ? `CANCEL` : `ADD +`
+  addTaskButton.innerHTML = addTools.style.display === "block" ? `CANCEL` : `ADD`
 
   renderTasks(mySavedTasks)
 })
@@ -132,7 +147,6 @@ function renderIntro(today) {
 function renderTasks(savedTasks) {
   if (savedTasks.length == 0) {
     tasksList.innerHTML = `<p>There are no tasks to complete today!</p>`
-    tasksList.style.textAlign = "center"
     return
   }
 
