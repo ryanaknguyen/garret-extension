@@ -111,7 +111,7 @@ button:active {
   min-width: 300px;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid #92bab1;
 }
 
@@ -143,4 +143,34 @@ button:active {
 
 .app-links {
   flex: 1;
+}
+
+.reflect {
+  min-width: 300px;
+  padding: 10px;
+  border: 1px solid #92bab1;
+  border-radius: 5px;
+}
+
+#reflect-done-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#reflect-done-button button {
+  border: 1px solid #92bab1;
+  background-color: #aac9c3;
+  color: white;
+  padding: 3px 7px;
+}
+
+#reflection-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prompt {
+  font-size: 14px;
 }
