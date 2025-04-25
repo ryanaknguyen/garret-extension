@@ -49,11 +49,12 @@ button:active {
   align-items: center;
 }
 
-#to-do {
+.card {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 2px #92bab1;
+  margin-bottom: 10px;
 }
 
 #task-title {
@@ -150,12 +151,13 @@ button:active {
   padding: 10px;
   border: 1px solid #92bab1;
   border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 #reflect-done-button {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 5px 0 0;
 }
 
 #reflect-done-button button {
@@ -180,12 +182,11 @@ button:active {
   flex-direction: column;
   text-align: center;
   gap: 10px;
-  margin-bottom: 10px;
 }
 
 #countdown p {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #time-remaining {
@@ -210,6 +211,7 @@ button:active {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 10px 0 20px;
 }
 
 #quote p {
@@ -218,13 +220,15 @@ button:active {
 
 #breathe {
   text-align: center;
-  margin: 10px 0;
+  margin: 10px 0 0;
 }
 
 #breathe button {
   background-color: white;
   border: 1px solid #92bab1;
   color: #92bab1;
+  padding: 5px 8px;
+  margin-bottom: 10px;
 }
 
 #breathing-exercise {
@@ -246,9 +250,12 @@ button:active {
 }
 
 .back-to-home {
-  border: 1px solid black;
-  padding: 5px 8px;
-  margin-top: 10px;
+  background-color: #aac9c3;
+  color: white;
+  border: 1px solid #92bab1;
+  margin: 0 3px;
+  padding: 7px 20px;
+  box-shadow: 1px 1px 2px #92bab1;
 }
 
 .back-to-home:hover {
