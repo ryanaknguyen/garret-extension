@@ -19,7 +19,7 @@ button:active {
   opacity: 60%;
 }
 
-#date-bar {
+.date-bar {
   text-align: center;
   background-color: #aac9c3;
   padding: 10px;
