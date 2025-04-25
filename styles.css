@@ -240,3 +240,17 @@ button:active {
   width: 50px;
   font-size: 18px;
 }
+
+.home {
+  text-align: center;
+}
+
+.back-to-home {
+  border: 1px solid black;
+  padding: 5px 8px;
+  margin-top: 10px;
+}
+
+.back-to-home:hover {
+  opacity: 80%;
+}
